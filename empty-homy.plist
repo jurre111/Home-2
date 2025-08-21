@@ -3,7 +3,9 @@
 <plist version="1.0">
 <dict>
     <key>method</key>
-    <string>development</string>
+    <string>debugging</string>
+    <key>teamID</key>
+    <string>FAKETEAMID</string>
     <key>compileBitcode</key>
     <false/>
     <key>stripSwiftSymbols</key>
@@ -11,6 +13,12 @@
     <key>thinning</key>
     <string>&lt;none&gt;</string>
     <key>signingStyle</key>
-    <string>manual</string>
+    <string>automatic</string>
+    <key>provisioningProfiles</key>
+    <dict/>
+    <key>destination</key>
+    <string>export</string>
+    <key>signingCertificate</key>
+    <string></string>
 </dict>
 </plist>
