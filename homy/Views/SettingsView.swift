@@ -24,6 +24,13 @@ struct SettingsView: View {
                 }
             }
             .navigationTitle("Settings")
+            .toolbar {
+                ToolbarItem(placement: .bottomBar) {
+                    Link("Download the newest version", destination: URL(string: "itms-services://?action=download-manifest&url=https://github.com/jurre111/Home-2/raw/refs/heads/main/downloads/manifest.plist")!)
+                        .font(.footnote)
+                        .foregroundColor(.blue)
+                }
+            }
         }
     }
 }
