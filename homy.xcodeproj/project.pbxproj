@@ -10,6 +10,10 @@
 		4397F9552DCDDA0100090799 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4397F9542DCDDA0100090799 /* App.swift */; };
 		4397F9572DCDDA0100090799 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4397F9562DCDDA0100090799 /* ContentView.swift */; };
 		4397F9592DCDDA0200090799 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4397F9582DCDDA0200090799 /* Assets.xcassets */; };
+		4397F9602DCDDA0300090799 /* SensorData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4397F95F2DCDDA0300090799 /* SensorData.swift */; };
+		4397F9622DCDDA0400090799 /* TileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4397F9612DCDDA0400090799 /* TileView.swift */; };
+		4397F9642DCDDA0500090799 /* AddSourceSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4397F9632DCDDA0500090799 /* AddSourceSheet.swift */; };
+		4397F9662DCDDA0600090799 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4397F9652DCDDA0600090799 /* SettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -17,6 +21,10 @@
 		4397F9542DCDDA0100090799 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		4397F9562DCDDA0100090799 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4397F9582DCDDA0200090799 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4397F95F2DCDDA0300090799 /* SensorData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorData.swift; sourceTree = "<group>"; };
+		4397F9612DCDDA0400090799 /* TileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileView.swift; sourceTree = "<group>"; };
+		4397F9632DCDDA0500090799 /* AddSourceSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSourceSheet.swift; sourceTree = "<group>"; };
+		4397F9652DCDDA0600090799 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,8 +60,28 @@
 				4397F9542DCDDA0100090799 /* App.swift */,
 				4397F9562DCDDA0100090799 /* ContentView.swift */,
 				4397F9582DCDDA0200090799 /* Assets.xcassets */,
+				4397F96A2DCDDA0700090799 /* Models */,
+				4397F96B2DCDDA0800090799 /* Views */,
 			);
 			path = homy;
+			sourceTree = "<group>";
+		};
+		4397F96A2DCDDA0700090799 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4397F95F2DCDDA0300090799 /* SensorData.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4397F96B2DCDDA0800090799 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4397F9612DCDDA0400090799 /* TileView.swift */,
+				4397F9632DCDDA0500090799 /* AddSourceSheet.swift */,
+				4397F9652DCDDA0600090799 /* SettingsView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,6 +155,10 @@
 			files = (
 				4397F9552DCDDA0100090799 /* App.swift in Sources */,
 				4397F9572DCDDA0100090799 /* ContentView.swift in Sources */,
+				4397F9602DCDDA0300090799 /* SensorData.swift in Sources */,
+				4397F9622DCDDA0400090799 /* TileView.swift in Sources */,
+				4397F9642DCDDA0500090799 /* AddSourceSheet.swift in Sources */,
+				4397F9662DCDDA0600090799 /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
