@@ -60,9 +60,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		4397F9502DCDDA0100090799 /* dirtyZero */ = {
+		4397F9502DCDDA0100090799 /* homy */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4397F95F2DCDDA0200090799 /* Build configuration list for PBXNativeTarget "dirtyZero" */;
+			buildConfigurationList = 4397F95F2DCDDA0200090799 /* Build configuration list for PBXNativeTarget "homy" */;
 			buildPhases = (
 				4397F94D2DCDDA0100090799 /* Sources */,
 				4397F94E2DCDDA0100090799 /* Frameworks */,
