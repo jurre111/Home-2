@@ -161,7 +161,7 @@ jobs:
             unzip "${{env.scheme}}.ipa"
         - name: Sign IPA using ZSign
           run: |
-            ./zsign/bin/zsign -k cert.p12 -p "" -m profile.prov -o payload.zip "Payload/${{env.scheme}}.app"
+            ./zsign/bin/zsign -k cert.p12 -p "kravasign" -m profile.prov -o payload.zip "Payload/${{env.scheme}}.app"
             zip -r "${{env.scheme}}-signed.ipa" Payload
         - name: Move IPA to root of repository
           run: |
