@@ -31,7 +31,7 @@ struct ContentView: View {
                                 ForEach(sensorManager.sources) { source in
                                     TileView(
                                         source: source,
-                                        data: sensorManager.sensorData[source.url]
+                                        data: sensorManager.sensorData[source.id]
                                     )
                                 }
                             }
