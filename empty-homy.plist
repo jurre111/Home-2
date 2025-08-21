@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>method</key>
+    <string>ad-hoc</string>
+    <key>teamID</key>
+    <string>00000000</string>
+    <key>compileBitcode</key>
+    <false/>
+    <key>provisioningProfiles</key>
+    <dict>
+        <key>com.example.homy</key>
+        <string>empty-profile</string>
+    </dict>
+    <key>signingCertificate</key>
+    <string>Apple Development</string>
+    <key>signingStyle</key>
+    <string>automatic</string>
+    <key>stripSwiftSymbols</key>
+    <true/>
+    <key>thinning</key>
+    <string>&lt;none&gt;</string>
+</dict>
+</plist>
