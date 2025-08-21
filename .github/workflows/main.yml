@@ -45,11 +45,24 @@ jobs:
       - name: Tar Build Artifact
         run: tar -cvf "$archive_path.xcarchive.tar" "$archive_path.xcarchive"
       
-      - name: Upload Build Artifact
+      - name: Create downloads directory
+        run: mkdir -p downloads
+
+      - name: Export IPA
+        run: |
+          xcodebuild -exportArchive \
+            -archivePath "$archive_path.xcarchive" \
+            -exportPath "./downloads" \
+            -exportOptionsPlist "empty-homy.plist" \
+            CODE_SIGN_IDENTITY="" \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGNING_ALLOWED=NO
+
+      - name: Upload IPA
         uses: actions/upload-artifact@v4
         with:
-          name: xcarchive
-          path: ${{ env.archive_path }}.xcarchive.tar
+          name: homy-ipa
+          path: downloads/*.ipa
           
   package:
     name: Create fake-signed ipa
@@ -63,7 +76,8 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/download-artifact@v4
         with:
-          name: xcarchive
+          name: homy-ipa
+          path: downloads
           
   release__nightly:
     name: Nightly Release
@@ -74,3 +88,7 @@ jobs:
     needs: [package]
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: homy-ipa
+          path: downloads
