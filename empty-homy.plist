@@ -3,23 +3,14 @@
 <plist version="1.0">
 <dict>
     <key>method</key>
-    <string>ad-hoc</string>
-    <key>teamID</key>
-    <string>00000000</string>
+    <string>development</string>
     <key>compileBitcode</key>
     <false/>
-    <key>provisioningProfiles</key>
-    <dict>
-        <key>com.example.homy</key>
-        <string>empty-profile</string>
-    </dict>
-    <key>signingCertificate</key>
-    <string>Apple Development</string>
-    <key>signingStyle</key>
-    <string>automatic</string>
     <key>stripSwiftSymbols</key>
     <true/>
     <key>thinning</key>
     <string>&lt;none&gt;</string>
+    <key>signingStyle</key>
+    <string>manual</string>
 </dict>
 </plist>
