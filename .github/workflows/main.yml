@@ -214,13 +214,13 @@ jobs:
             mv "manifest.plist" "$GITHUB_WORKSPACE/downloads/"
         - name: Commit and push IPA to repository
           run: |
-            git config --global user.name "github-actions"
-            git config --global user.email "github-actions@github.com"
+            git config --global user.name "github-actions[bot]"
+            git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
             git pull
             git add "$GITHUB_WORKSPACE/downloads/${{env.scheme}}-signed.ipa"
             git add "$GITHUB_WORKSPACE/downloads/manifest.plist"
             git commit -m "Add signed IPA build artifact and correct manifest.plist"
-            git push
+            git push "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" HEAD:${{ github.ref_name }}  
           env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
