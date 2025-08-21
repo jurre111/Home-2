@@ -129,6 +129,8 @@ jobs:
       name: Sign IPA with ZSign
       runs-on: ubuntu-latest
       needs: [package]
+      permissions:
+        contents: write
       env:
         scheme: homy
       steps:
