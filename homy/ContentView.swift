@@ -4,9 +4,13 @@ struct ContentView: View {
     @StateObject private var sensorManager = SensorManager()
     @State private var selectedTab = 0
     @State private var showingAddSheet = false
+    @AppStorage("isOnboardingCompleted") private var isOnboardingCompleted = false
     
     var body: some View {
-        TabView(selection: $selectedTab) {
+        if !isOnboardingCompleted {
+            OnboardingView(isOnboardingCompleted: $isOnboardingCompleted)
+        } else {
+            TabView(selection: $selectedTab) {
             NavigationView {
                 ZStack {
                     if sensorManager.sources.isEmpty {
@@ -60,9 +64,10 @@ struct ContentView: View {
                     Text("Settings")
                 }
                 .tag(1)
-        }
-        .sheet(isPresented: $showingAddSheet) {
-            AddSourceSheet(sensorManager: sensorManager)
+            }
+            .sheet(isPresented: $showingAddSheet) {
+                AddSourceSheet(sensorManager: sensorManager)
+            }
         }
     }
 }

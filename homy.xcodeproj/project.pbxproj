@@ -14,6 +14,8 @@
 		4397F9622DCDDA0400090799 /* TileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4397F9612DCDDA0400090799 /* TileView.swift */; };
 		4397F9642DCDDA0500090799 /* AddSourceSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4397F9632DCDDA0500090799 /* AddSourceSheet.swift */; };
 		4397F9662DCDDA0600090799 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4397F9652DCDDA0600090799 /* SettingsView.swift */; };
+		4397F9682DCDDA0700090799 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4397F9672DCDDA0700090799 /* OnboardingViewModel.swift */; };
+		4397F96A2DCDDA0800090799 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4397F9692DCDDA0800090799 /* OnboardingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +27,8 @@
 		4397F9612DCDDA0400090799 /* TileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileView.swift; sourceTree = "<group>"; };
 		4397F9632DCDDA0500090799 /* AddSourceSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSourceSheet.swift; sourceTree = "<group>"; };
 		4397F9652DCDDA0600090799 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		4397F9672DCDDA0700090799 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
+		4397F9692DCDDA0800090799 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +84,8 @@
 				4397F9612DCDDA0400090799 /* TileView.swift */,
 				4397F9632DCDDA0500090799 /* AddSourceSheet.swift */,
 				4397F9652DCDDA0600090799 /* SettingsView.swift */,
+				4397F9672DCDDA0700090799 /* OnboardingViewModel.swift */,
+				4397F9692DCDDA0800090799 /* OnboardingView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
