@@ -25,9 +25,7 @@ struct SettingsView: View {
             }
             .navigationTitle("Settings")
             .navigationBarItems(
-                    trailing: Button(action: {
-                        showingAddSheet = true
-                    }) {
+                    trailing: Button() {
                         Image(systemName: "info.circle")
                     }
                 )
