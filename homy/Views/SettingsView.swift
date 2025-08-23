@@ -6,7 +6,7 @@ struct SettingsView: View {
     var body: some View {
         NavigationView {
             List {
-                Section("Sources") {
+                Section(header: Text("Sources")) {
                     ForEach(sensorManager.sources) { source in
                         VStack(alignment: .leading) {
                             Text(source.name)
@@ -29,8 +29,6 @@ struct SettingsView: View {
                     Link("Download the newest version", destination: URL(string: "itms-services://?action=download-manifest&url=https://github.com/jurre111/Home-2/raw/refs/heads/main/downloads/manifest.plist")!)
                         .font(.footnote)
                         .foregroundColor(.blue)
-                    Text("v1.0 beta")
-                        .font(.footnote)
                 }
             }
         }
