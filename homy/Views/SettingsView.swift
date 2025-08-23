@@ -24,6 +24,13 @@ struct SettingsView: View {
                 }
             }
             .navigationTitle("Settings")
+            .navigationBarItems(
+                    trailing: Button(action: {
+                        showingAddSheet = true
+                    }) {
+                        Image(systemName: "info.circle")
+                    }
+                )
             .toolbar {
                 ToolbarItem(placement: .bottomBar) {
                     Link("Download the newest version", destination: URL(string: "itms-services://?action=download-manifest&url=https://github.com/jurre111/Home-2/raw/refs/heads/main/downloads/manifest.plist")!)
