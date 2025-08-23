@@ -29,6 +29,8 @@ struct SettingsView: View {
                     Link("Download the newest version", destination: URL(string: "itms-services://?action=download-manifest&url=https://github.com/jurre111/Home-2/raw/refs/heads/main/downloads/manifest.plist")!)
                         .font(.footnote)
                         .foregroundColor(.blue)
+                    Text("v1.0 beta")
+                        .font(.footnote)
                 }
             }
         }
