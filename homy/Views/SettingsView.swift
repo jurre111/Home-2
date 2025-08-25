@@ -25,10 +25,12 @@ struct SettingsView: View {
             }
             .navigationTitle("Settings")
             .navigationBarItems(
-                    trailing: Button() {
-                        Image(systemName: "info.circle")
-                    }
-                )
+                trailing: Button(action: {
+                    // Action goes here (e.g. show About screen)
+                }) {
+                    Image(systemName: "info.circle")
+                }
+            )
             .toolbar {
                 ToolbarItem(placement: .bottomBar) {
                     Link("Download the newest version", destination: URL(string: "itms-services://?action=download-manifest&url=https://github.com/jurre111/Home-2/raw/refs/heads/main/downloads/manifest.plist")!)
