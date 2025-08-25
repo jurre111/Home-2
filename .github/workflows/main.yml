@@ -234,12 +234,12 @@ jobs:
           uses: actions/upload-artifact@v4
           with:
             name: ${{ env.scheme }}-signed.ipa
-            path: signed/${{ env.scheme }}-signed.ipa
+            path: $GITHUB_WORKSPACE/downloads/${{ env.scheme }}-signed.ipa
         - name: Upload a Build Artifact
           uses: actions/upload-artifact@v4
           with:
             name: manifest.plist
-            path: manifest.plist
+            path: $GITHUB_WORKSPACE/downloads/manifest.plist
 
   release__nightly:
     name: Nightly Release
