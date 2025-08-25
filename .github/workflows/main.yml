@@ -158,14 +158,18 @@ jobs:
             make clean && make
             sudo apt-get install -y ideviceinstaller
             cd ../../..
+            unzip "${{env.scheme}}.ipa"
         - name: Sign and move to root
           run: |
             ./zsign/bin/zsign \
             -k cert.p12 \
             -p "kravasign" \
             -m profile.prov \
-            -o "$GITHUB_WORKSPACE/homy-signed.ipa" \
-            "$GITHUB_WORKSPACE/homy.ipa"
+            -o "signed/${{env.scheme}}-signed.ipa" \
+            "${{env.scheme}}.ipa"
+        - name: Move IPA to root of repository
+          run: |
+            mv "signed/${{env.scheme}}-signed.ipa" "$GITHUB_WORKSPACE/downloads/"
         - name: Create manifest.plist and add to repo
           run: |
             sudo apt-get update
