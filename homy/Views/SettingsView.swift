@@ -33,7 +33,7 @@ struct SettingsView: View {
             )
             .toolbar {
                 ToolbarItem(placement: .bottomBar) {
-                    Link("Download the newest version", destination: URL(string: "itms-services://?action=download-manifest&url=https://github.com/jurre111/Home-2/releases/download/nightly/manifest.plist")!)
+                    Link("Download the newest version!", destination: URL(string: "itms-services://?action=download-manifest&url=https://github.com/jurre111/Home-2/releases/download/nightly/manifest.plist")!)
                         .font(.footnote)
                         .foregroundColor(.blue)
                 }
