@@ -244,7 +244,7 @@ jobs:
     permissions:
       contents: write
     env:
-        scheme: homy
+      scheme: homy
     if: inputs.release__nightly || github.event_name == 'push'
     runs-on: ubuntu-latest
     needs: [sign-ipa_1]
@@ -253,15 +253,17 @@ jobs:
       cancel-in-progress: true
 
     steps:
-      - name: Download a Build Artifact
+      - name: Download signed IPA + manifest
         uses: actions/download-artifact@v4
         with:
-          name: ${{ needs.sign-ipa_1.outputs.artifact }}
+          name: signed-files
+          path: downloads
+
       - name: Nightly Release
         uses: andelf/nightly-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with: 
+        with:
           body: |
             This is a nightly release [created automatically with GitHub Actions workflow](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}/attempts/${{ github.run_attempt }}).
           files: |
