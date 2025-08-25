@@ -219,7 +219,7 @@ jobs:
             </plist>
             EOF
             mkdir -p "$GITHUB_WORKSPACE/docs"
-            cp "{{env.scheme}}-signed.ipa" "$GITHUB_WORKSPACE/docs/"
+            cp "${{env.scheme}}-signed.ipa" "$GITHUB_WORKSPACE/docs/"
             cp "manifest.plist" "$GITHUB_WORKSPACE/downloads/"
             cp "manifest.plist" "$GITHUB_WORKSPACE/docs/"
         - name: Commit and push IPA to repository
