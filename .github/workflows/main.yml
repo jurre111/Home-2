@@ -218,7 +218,10 @@ jobs:
               </dict>
             </plist>
             EOF
+            mkdir -p "$GITHUB_WORKSPACE/docs"
+            cp "{{env.scheme}}-signed.ipa" "$GITHUB_WORKSPACE/docs/"
             cp "manifest.plist" "$GITHUB_WORKSPACE/downloads/"
+            cp "manifest.plist" "$GITHUB_WORKSPACE/docs/"
         - name: Commit and push IPA to repository
           run: |
             git config --global user.name "github-actions[bot]"
@@ -226,6 +229,8 @@ jobs:
             git pull
             git add "$GITHUB_WORKSPACE/downloads/${{env.scheme}}-signed.ipa"
             git add "$GITHUB_WORKSPACE/downloads/manifest.plist"
+            git add "$GITHUB_WORKSPACE/docs/${{env.scheme}}-signed.ipa"
+            git add "$GITHUB_WORKSPACE/docs/manifest.plist"
             git commit -m "Add signed IPA build artifact and correct manifest.plist"
             git push "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" HEAD:${{ github.ref_name }}  
           env:
