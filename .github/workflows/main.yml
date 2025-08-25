@@ -167,12 +167,12 @@ jobs:
             -k cert.p12 \
             -p "kravasign" \
             -m profile.prov \
-            -o "signed/${{env.scheme}}-signed.ipa" \
+            -o "${{env.scheme}}-signed.ipa" \
             "${{env.scheme}}.ipa"
-        - name: Move IPA to root of repository
+        - name: Copy IPA to root of repository
           run: |
-            cp "signed/${{env.scheme}}-signed.ipa" "$GITHUB_WORKSPACE/downloads/"
-        - name: Create manifest.plist and add to repo
+            cp "${{env.scheme}}-signed.ipa" "$GITHUB_WORKSPACE/downloads/"
+        - name: Create manifest.plist and copy to repository
           run: |
             sudo apt-get update
             sudo apt-get install libxml2-utils
@@ -235,7 +235,7 @@ jobs:
           with:
             name: signed-files
             path: |
-              signed/${{env.scheme}}-signed.ipa
+              ${{env.scheme}}-signed.ipa
               manifest.plist
 
 
