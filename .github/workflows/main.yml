@@ -163,6 +163,7 @@ jobs:
           run: |
             mkdir -p signed
             ./zsign/bin/zsign \
+            -V \
             -k cert.p12 \
             -p "kravasign" \
             -m profile.prov \
