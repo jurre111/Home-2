@@ -161,6 +161,7 @@ jobs:
             unzip "${{env.scheme}}.ipa"
         - name: Sign and move to root
           run: |
+            mkdir -p signed
             ./zsign/bin/zsign \
             -k cert.p12 \
             -p "kravasign" \
