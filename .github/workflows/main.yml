@@ -157,14 +157,10 @@ jobs:
             cd zsign/build/linux
             make clean && make
             sudo apt-get install -y ideviceinstaller
-            mkdir signed
             cd ../../..
-            ls
-            unzip "${{env.scheme}}.ipa"
         - name: Sign IPA using ZSign
           run: |
-            ./zsign/bin/zsign -k cert.p12 -p "kravasign" -m profile.prov -o payload.zip "Payload/${{env.scheme}}.app"
-            zip -r "${{env.scheme}}-signed.ipa" Payload
+            ./zsign/bin/zsign -k cert.p12 -p "kravasign" -m profile.prov -o "${{env.scheme}}-signed.ipa" "${{env.scheme}}.ipa"
         - name: Move IPA to root of repository
           run: |
             mv "${{env.scheme}}-signed.ipa" "$GITHUB_WORKSPACE/downloads/"
