@@ -158,11 +158,9 @@ jobs:
             make clean && make
             sudo apt-get install -y ideviceinstaller
             cd ../../..
-        - name: Sign IPA using ZSign
+        - name: Sign and move to root
           run: |
             ./zsign/bin/zsign -k cert.p12 -p "kravasign" -m profile.prov -o "${{env.scheme}}-signed.ipa" "${{env.scheme}}.ipa"
-        - name: Move IPA to root of repository
-          run: |
             mv "${{env.scheme}}-signed.ipa" "$GITHUB_WORKSPACE/downloads/"
         - name: Create manifest.plist and add to repo
           run: |
