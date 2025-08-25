@@ -171,7 +171,7 @@ jobs:
             "${{env.scheme}}.ipa"
         - name: Move IPA to root of repository
           run: |
-            mv "signed/${{env.scheme}}-signed.ipa" "$GITHUB_WORKSPACE/downloads/"
+            cp "signed/${{env.scheme}}-signed.ipa" "$GITHUB_WORKSPACE/downloads/"
         - name: Create manifest.plist and add to repo
           run: |
             sudo apt-get update
@@ -218,7 +218,7 @@ jobs:
               </dict>
             </plist>
             EOF
-            mv "manifest.plist" "$GITHUB_WORKSPACE/downloads/"
+            cp "manifest.plist" "$GITHUB_WORKSPACE/downloads/"
         - name: Commit and push IPA to repository
           run: |
             git config --global user.name "github-actions[bot]"
@@ -230,16 +230,14 @@ jobs:
             git push "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" HEAD:${{ github.ref_name }}  
           env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        - name: Upload a Build Artifact
+        - name: Upload signed IPA and manifest as artifacts
           uses: actions/upload-artifact@v4
           with:
-            name: ${{ env.scheme }}-signed.ipa
-            path: $GITHUB_WORKSPACE/downloads/${{ env.scheme }}-signed.ipa
-        - name: Upload a Build Artifact
-          uses: actions/upload-artifact@v4
-          with:
-            name: manifest.plist
-            path: $GITHUB_WORKSPACE/downloads/manifest.plist
+            name: signed-files
+            path: |
+              signed/${{env.scheme}}-signed.ipa
+              manifest.plist
+
 
   release__nightly:
     name: Nightly Release
